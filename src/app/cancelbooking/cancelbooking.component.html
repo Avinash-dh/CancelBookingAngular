@@ -1,0 +1,19 @@
+<section class="col-4 mx-auto">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<h2 class="text-center">Cancel Booking</h2>
+<div *ngIf="msg !=undefined" class="alert alert-success">
+  {{msg}}
+</div>
+
+<div class="alert alert-danger" *ngIf="errorMsg!=undefined">{{errorMsg}}</div>
+<section class="col-md-4 mx-auto" >
+<form #frm="ngForm" (ngSubmit)="cancelbooking()">
+  <div>BookingId</div>
+  <input class="form-control" type="text" placeholder="Enter bookingId" name="bookingId" #booking="ngModel"
+    [(ngModel)]="bookingId" required/>
+    <div class="mt-2 text-centre"><input type="submit" value="Cancel Booking" [disabled]="!frm.valid" class="btn-btn-danger"/></div>
+
+</form>
+</section>
+
+
